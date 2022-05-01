@@ -1,0 +1,18 @@
+{
+  "name": "PostgresTest",
+  "debug": true,
+  "attach": [
+    "volante-console"
+  ],
+  "attachLocal": [
+    "./src",
+    "./example/example"
+  ],
+  "VolantePostgres": {
+    "db": "postgres",
+    "host": "postgres",
+    "port": 5432,
+    "user": "postgres",
+    "pass": "postgres"
+  }
+}

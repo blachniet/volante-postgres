@@ -1,0 +1,26 @@
+{
+  "name": "volante-postgres",
+  "version": "1.0.0",
+  "description": "volante module for postgres",
+  "author": "Mike Smiley <msmiley@alumni.rice.edu>",
+  "url": "https://github.com/msmiley/volante-postgres",
+  "repository": "msmiley/volante-postgres.git",
+  "main": "./src",
+  "scripts": {
+    "dev": "node example/index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "volante": "^6.3.0",
+    "volante-console": "^4.1.0",
+    "volante-express": "^7.0.0",
+    "volante-kafka": "^7.1.0",
+    "volante-swagger": "^5.0.0"
+  },
+  "keywords": [
+    "volante"
+  ]
+}
