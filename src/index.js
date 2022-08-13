@@ -24,10 +24,13 @@ module.exports = {
   },
   data() {
     return {
-      client: null,
+      client: null, // handle to pg client
     };
   },
   methods: {
+    //
+    // connect the client to postgres
+    //
     async connect() {
       this.client = new Client({
         host: this.host,
@@ -39,12 +42,27 @@ module.exports = {
       await this.client.connect();
       this.$ready(`connected to postgres at ${this.host}:${this.port}`);
     },
-    async insert() {
-      
+    //
+    // use 'if not exists' to ensure the schema with the given name has been created
+    //
+    ensureSchema(name) {
+      return this.client.query(`CREATE SCHEMA IF NOT EXISTS ${name};`);
     },
+    //
+    // use 'if not exists' to ensure the given table has been created
+    //
+    ensureTable(name, columns) {
+      return this.client.query(`CREATE TABLE IF NOT EXISTS ${name} (${columns});`);
+    },
+    //
+    // query wrapper for pg .query
+    //
     async query(q) {
       return this.client.query(q);
     },
+    //
+    // disconnect the client from postgres
+    //
     disconnect() {
       if (this.client) {
         return this.client.end().then(() => {

@@ -14,11 +14,8 @@
     "pg": "^8.7.3"
   },
   "devDependencies": {
-    "volante": "^6.3.0",
-    "volante-console": "^4.1.0",
-    "volante-express": "^7.0.0",
-    "volante-kafka": "^7.1.0",
-    "volante-swagger": "^5.0.0"
+    "volante": "^6.8.0",
+    "volante-console": "^4.2.0"
   },
   "keywords": [
     "volante"
